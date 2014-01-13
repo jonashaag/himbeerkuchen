@@ -1,0 +1,51 @@
+#!/bin/sh
+
+get_station_url() {
+  sort -R <<< "$STATIONS" | head -n 1
+}
+
+play_random_station() {
+  mocp -S 2>/dev/null
+  mocp --playit $(get_station_url) 2>/dev/null
+}
+
+STATIONS="http://pub5.rockradio.com:80/rr_grunge
+http://pub5.rockradio.com:80/rr_industrial
+http://pub5.rockradio.com:80/rr_classicrock
+http://pub5.rockradio.com:80/rr_classichardrock
+http://pub5.rockradio.com:80/rr_classicmetal
+http://pub5.rockradio.com:80/rr_80srock
+http://pub5.rockradio.com:80/rr_90srock
+http://pub5.rockradio.com:80/rr_modernrock
+http://pub5.rockradio.com:80/rr_hardrock
+http://pub5.rockradio.com:80/rr_harderrock
+http://pub5.rockradio.com:80/rr_softrock
+http://pub5.rockradio.com:80/rr_poprock
+http://pub5.rockradio.com:80/rr_alternative90s
+http://pub5.rockradio.com:80/rr_alternative80s
+http://pub5.rockradio.com:80/rr_bluesrock
+http://pub5.rockradio.com:80/rr_rockballads
+http://pub5.rockradio.com:80/rr_hairbands
+http://pub5.rockradio.com:80/rr_beatlestribute
+http://pub5.rockradio.com:80/rr_metal
+http://pub5.rockradio.com:80/rr_heavymetal
+http://pub5.rockradio.com:80/rr_deathmetal
+http://pub5.rockradio.com:80/rr_powermetal
+http://pub5.rockradio.com:80/rr_symphonicmetal
+http://pub5.rockradio.com:80/rr_progressivemetal
+http://pub5.rockradio.com:80/rr_numetal
+http://pub5.rockradio.com:80/rr_punkrock
+http://pub5.rockradio.com:80/rr_hardcore
+http://pub5.rockradio.com:80/rr_metalcore
+http://pub5.rockradio.com:80/rr_thrashmetal
+http://pub5.rockradio.com:80/rr_deathcore
+http://pub5.rockradio.com:80/rr_indierock
+http://pub5.rockradio.com:80/rr_poppunk
+http://pub5.rockradio.com:80/rr_progressiverock
+http://pub5.rockradio.com:80/rr_screamoemo
+http://pub5.rockradio.com:80/rr_ska
+http://pub5.rockradio.com:80/rr_jambands
+http://pub5.rockradio.com:80/rr_blackmetal
+http://pub5.rockradio.com:80/rr_60srock
+http://pub5.rockradio.com:80/rr_melodicdeathmetal
+http://pub5.rockradio.com:80/rr_rapmetal"
